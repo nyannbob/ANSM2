@@ -1,2 +1,0 @@
-Position linear
-Position angular
