@@ -1,0 +1,97 @@
+[0.011s] Invoking command in '/home/nyann/svan/svan_sw2/build/svanm2_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/nyann/ros2_ws/install/my_robot_controller:/opt/ros/humble /usr/bin/cmake --build /home/nyann/svan/svan_sw2/build/svanm2_description -- -j16 -l16
+[0.043s] -- Found ament_cmake: 1.3.8 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.170s] -- Found rclcpp: 16.0.8 (/opt/ros/humble/share/rclcpp/cmake)
+[0.213s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.216s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.223s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.236s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.251s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.307s] -- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.310s] -- Found rmw_cyclonedds_cpp: 1.3.4 (/opt/ros/humble/share/rmw_cyclonedds_cpp/cmake)
+[0.340s] -- Using RMW implementation 'rmw_cyclonedds_cpp' as default
+[0.473s] -- Found rclpy: 3.3.12 (/opt/ros/humble/share/rclpy/cmake)
+[0.473s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[0.480s] -- Found nav_msgs: 4.2.3 (/opt/ros/humble/share/nav_msgs/cmake)
+[0.587s] -- Found ament_lint_auto: 0.12.10 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[0.646s] -- Configuring done
+[0.652s] -- Generating done
+[0.653s] -- Build files have been written to: /home/nyann/svan/svan_sw2/build/svanm2_description
+[0.681s] Invoked command in '/home/nyann/svan/svan_sw2/build/svanm2_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/nyann/ros2_ws/install/my_robot_controller:/opt/ros/humble /usr/bin/cmake --build /home/nyann/svan/svan_sw2/build/svanm2_description -- -j16 -l16
+[0.714s] Invoking command in '/home/nyann/svan/svan_sw2/build/svanm2_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/nyann/ros2_ws/install/my_robot_controller:/opt/ros/humble /usr/bin/cmake --install /home/nyann/svan/svan_sw2/build/svanm2_description
+[0.722s] -- Install configuration: ""
+[0.722s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//launch
+[0.722s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//launch/display.launch.xml
+[0.722s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//launch/display.launch.py
+[0.722s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//launch/gazebo.launch.xml
+[0.723s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//meshes
+[0.723s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//meshes/Empty_Link4.STL
+[0.723s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//meshes/sensors_meshes
+[0.723s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//meshes/sensors_meshes/r200.dae
+[0.723s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//meshes/sensors_meshes/t265.stl
+[0.723s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//meshes/sensors_meshes/lds.stl
+[0.723s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//meshes/sensors_meshes/astra.dae
+[0.723s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//meshes/sensors_meshes/d435.dae
+[0.723s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//meshes/sensors_meshes/astra.jpg
+[0.723s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//meshes/sensors_meshes/r200.jpg
+[0.724s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//meshes/sensors_meshes/d415.stl
+[0.724s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//meshes/LH_THIGH.STL
+[0.724s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//meshes/RH_HIP.STL
+[0.724s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//meshes/LH_HIP.STL
+[0.724s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//meshes/RF_SHANK.STL
+[0.724s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//meshes/RF_HIP.STL
+[0.724s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//meshes/Empty_Link1.STL
+[0.724s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//meshes/LF_THIGH.STL
+[0.724s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//meshes/LF_HIP.STL
+[0.724s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//meshes/RF_THIGH.STL
+[0.724s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//meshes/Empty_Link2.STL
+[0.724s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//meshes/LH_SHANK.STL
+[0.724s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//meshes/RH_SHANK.STL
+[0.724s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//meshes/Empty_Link3.STL
+[0.724s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//meshes/LF_SHANK.STL
+[0.725s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//meshes/RH_THIGH.STL
+[0.725s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//meshes/BASE.STL
+[0.725s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//xacro
+[0.725s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//xacro/just_test.py
+[0.725s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//xacro/const.xacro
+[0.725s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//xacro/your.urdf
+[0.725s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//xacro/robot.xacro
+[0.725s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//xacro/svanM2_robot.xacro
+[0.725s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//xacro/your_urdf.urdf
+[0.725s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//xacro/gazebo.xacro
+[0.725s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//xacro/materials.xacro
+[0.725s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//xacro/leg.xacro
+[0.725s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//urdf
+[0.725s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//urdf/_d435.gazebo.xacro
+[0.725s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//urdf/svanm2_cam.urdf
+[0.725s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//urdf/_d435.urdf.xacro
+[0.725s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//urdf/anymal.urdf
+[0.725s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//urdf/m2.urdf
+[0.725s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//urdf/log
+[0.726s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//urdf/log/edit_2024-05-17_13-19-22
+[0.726s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//urdf/log/edit_2024-05-17_13-19-22/logger_all.log
+[0.726s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//urdf/log/latest_edit
+[0.726s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//urdf/log/COLCON_IGNORE
+[0.726s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//urdf/log/edit_2024-05-17_13-20-03
+[0.726s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//urdf/log/edit_2024-05-17_13-20-03/logger_all.log
+[0.726s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//urdf/log/latest
+[0.726s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//urdf/svanm2.urdf
+[0.726s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//urdf/svanM2.csv
+[0.726s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//config
+[0.726s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//config/joint_names_SVANM2_URDF.yaml
+[0.726s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description//config/joint_names_SVAN_URDF4.yaml
+[0.727s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/ament_index/resource_index/package_run_dependencies/svanm2_description
+[0.727s] -- Installing: /home/nyann/svan/svan_sw2/install/svanm2_description/share/ament_index/resource_index/parent_prefix_path/svanm2_description
+[0.727s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description/environment/ament_prefix_path.sh
+[0.727s] -- Installing: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description/environment/ament_prefix_path.dsv
+[0.727s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description/environment/path.sh
+[0.727s] -- Installing: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description/environment/path.dsv
+[0.727s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description/local_setup.bash
+[0.727s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description/local_setup.sh
+[0.727s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description/local_setup.zsh
+[0.727s] -- Installing: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description/local_setup.dsv
+[0.727s] -- Installing: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description/package.dsv
+[0.728s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/ament_index/resource_index/packages/svanm2_description
+[0.728s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description/cmake/svanm2_descriptionConfig.cmake
+[0.728s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description/cmake/svanm2_descriptionConfig-version.cmake
+[0.728s] -- Up-to-date: /home/nyann/svan/svan_sw2/install/svanm2_description/share/svanm2_description/package.xml
+[0.729s] Invoked command in '/home/nyann/svan/svan_sw2/build/svanm2_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/nyann/ros2_ws/install/my_robot_controller:/opt/ros/humble /usr/bin/cmake --install /home/nyann/svan/svan_sw2/build/svanm2_description

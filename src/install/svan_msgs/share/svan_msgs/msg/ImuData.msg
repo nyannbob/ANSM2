@@ -1,0 +1,6 @@
+EulerXYZ base_orientation
+Position angular_rate
+Position angular_rate_bias
+Position angular_rate_bias_uncertainty
+Position acceleration
+EulerXYZ base_orientation_uncertainty

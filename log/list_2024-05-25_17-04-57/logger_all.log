@@ -1,0 +1,129 @@
+[0.515s] DEBUG:colcon:Command line arguments: ['/home/nyann/.local/bin/colcon', 'list', '-p', '--base-paths', '/home/nyann/svan/svan_sw2']
+[0.515s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='list', build_base='build', ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['/home/nyann/svan/svan_sw2'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], topological_order=False, names_only=False, paths_only=True, topological_graph=False, topological_graph_dot=False, topological_graph_density=False, topological_graph_legend=False, topological_graph_dot_cluster=False, topological_graph_dot_include_skipped=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x7b82d62c3c10>, verb_extension=<colcon_package_information.verb.list.ListVerb object at 0x7b82d62c25c0>, main=<bound method ListVerb.main of <colcon_package_information.verb.list.ListVerb object at 0x7b82d62c25c0>>, mixin_verb=('list',))
+[1.043s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[1.044s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[1.044s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[1.044s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[1.044s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[1.044s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/nyann/svan/svan_sw2'
+[1.045s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2) by extensions ['ignore', 'ignore_ament_install']
+[1.045s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2) by extension 'ignore'
+[1.045s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2) by extension 'ignore_ament_install'
+[1.045s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2) by extensions ['colcon_pkg']
+[1.045s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2) by extension 'colcon_pkg'
+[1.045s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2) by extensions ['colcon_meta']
+[1.045s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2) by extension 'colcon_meta'
+[1.046s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2) by extensions ['ros']
+[1.046s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2) by extension 'ros'
+[1.090s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2) by extensions ['cmake', 'python']
+[1.090s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2) by extension 'cmake'
+[1.091s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2) by extension 'python'
+[1.091s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2) by extensions ['python_setup_py']
+[1.091s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2) by extension 'python_setup_py'
+[1.093s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/build) by extensions ['ignore', 'ignore_ament_install']
+[1.094s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/build) by extension 'ignore'
+[1.094s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/build) ignored
+[1.095s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/install) by extensions ['ignore', 'ignore_ament_install']
+[1.096s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/install) by extension 'ignore'
+[1.096s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/install) ignored
+[1.097s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/log) by extensions ['ignore', 'ignore_ament_install']
+[1.097s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/log) by extension 'ignore'
+[1.097s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/log) ignored
+[1.097s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src) by extensions ['ignore', 'ignore_ament_install']
+[1.097s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src) by extension 'ignore'
+[1.098s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src) by extension 'ignore_ament_install'
+[1.098s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src) by extensions ['colcon_pkg']
+[1.098s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src) by extension 'colcon_pkg'
+[1.098s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src) by extensions ['colcon_meta']
+[1.098s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src) by extension 'colcon_meta'
+[1.098s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src) by extensions ['ros']
+[1.098s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src) by extension 'ros'
+[1.098s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src) by extensions ['cmake', 'python']
+[1.098s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src) by extension 'cmake'
+[1.098s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src) by extension 'python'
+[1.099s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src) by extensions ['python_setup_py']
+[1.099s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src) by extension 'python_setup_py'
+[1.099s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/build) by extensions ['ignore', 'ignore_ament_install']
+[1.099s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/build) by extension 'ignore'
+[1.099s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/build) ignored
+[1.099s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/install) by extensions ['ignore', 'ignore_ament_install']
+[1.100s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/install) by extension 'ignore'
+[1.100s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/install) ignored
+[1.101s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/log) by extensions ['ignore', 'ignore_ament_install']
+[1.101s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/log) by extension 'ignore'
+[1.101s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/log) ignored
+[1.101s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/svan_gazebo) by extensions ['ignore', 'ignore_ament_install']
+[1.102s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/svan_gazebo) by extension 'ignore'
+[1.102s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/svan_gazebo) by extension 'ignore_ament_install'
+[1.102s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/svan_gazebo) by extensions ['colcon_pkg']
+[1.102s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/svan_gazebo) by extension 'colcon_pkg'
+[1.102s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/svan_gazebo) by extensions ['colcon_meta']
+[1.102s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/svan_gazebo) by extension 'colcon_meta'
+[1.102s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/svan_gazebo) by extensions ['ros']
+[1.102s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/svan_gazebo) by extension 'ros'
+[1.110s] DEBUG:colcon.colcon_core.package_identification:Package '/home/nyann/svan/svan_sw2/src/svan_gazebo' with type 'ros.ament_cmake' and name 'svan_gazebo'
+[1.111s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/svan_msgs) by extensions ['ignore', 'ignore_ament_install']
+[1.111s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/svan_msgs) by extension 'ignore'
+[1.112s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/svan_msgs) by extension 'ignore_ament_install'
+[1.112s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/svan_msgs) by extensions ['colcon_pkg']
+[1.112s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/svan_msgs) by extension 'colcon_pkg'
+[1.112s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/svan_msgs) by extensions ['colcon_meta']
+[1.112s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/svan_msgs) by extension 'colcon_meta'
+[1.112s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/svan_msgs) by extensions ['ros']
+[1.112s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/svan_msgs) by extension 'ros'
+[1.114s] DEBUG:colcon.colcon_core.package_identification:Package '/home/nyann/svan/svan_sw2/src/svan_msgs' with type 'ros.ament_cmake' and name 'svan_msgs'
+[1.115s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/svanm2_description) by extensions ['ignore', 'ignore_ament_install']
+[1.115s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/svanm2_description) by extension 'ignore'
+[1.116s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/svanm2_description) by extension 'ignore_ament_install'
+[1.116s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/svanm2_description) by extensions ['colcon_pkg']
+[1.116s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/svanm2_description) by extension 'colcon_pkg'
+[1.116s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/svanm2_description) by extensions ['colcon_meta']
+[1.116s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/svanm2_description) by extension 'colcon_meta'
+[1.116s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/svanm2_description) by extensions ['ros']
+[1.116s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/svanm2_description) by extension 'ros'
+[1.118s] DEBUG:colcon.colcon_core.package_identification:Package '/home/nyann/svan/svan_sw2/src/svanm2_description' with type 'ros.ament_cmake' and name 'svanm2_description'
+[1.119s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/velodyne_description) by extensions ['ignore', 'ignore_ament_install']
+[1.119s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/velodyne_description) by extension 'ignore'
+[1.119s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/velodyne_description) by extension 'ignore_ament_install'
+[1.119s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/velodyne_description) by extensions ['colcon_pkg']
+[1.120s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/velodyne_description) by extension 'colcon_pkg'
+[1.120s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/velodyne_description) by extensions ['colcon_meta']
+[1.120s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/velodyne_description) by extension 'colcon_meta'
+[1.120s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/velodyne_description) by extensions ['ros']
+[1.120s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/velodyne_description) by extension 'ros'
+[1.121s] DEBUG:colcon.colcon_core.package_identification:Package '/home/nyann/svan/svan_sw2/src/velodyne_description' with type 'ros.ament_cmake' and name 'velodyne_description'
+[1.121s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/velodyne_gazebo_plugins) by extensions ['ignore', 'ignore_ament_install']
+[1.122s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/velodyne_gazebo_plugins) by extension 'ignore'
+[1.122s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/velodyne_gazebo_plugins) by extension 'ignore_ament_install'
+[1.122s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/velodyne_gazebo_plugins) by extensions ['colcon_pkg']
+[1.122s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/velodyne_gazebo_plugins) by extension 'colcon_pkg'
+[1.122s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/velodyne_gazebo_plugins) by extensions ['colcon_meta']
+[1.122s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/velodyne_gazebo_plugins) by extension 'colcon_meta'
+[1.122s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/velodyne_gazebo_plugins) by extensions ['ros']
+[1.122s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/velodyne_gazebo_plugins) by extension 'ros'
+[1.124s] DEBUG:colcon.colcon_core.package_identification:Package '/home/nyann/svan/svan_sw2/src/velodyne_gazebo_plugins' with type 'ros.ament_cmake' and name 'velodyne_gazebo_plugins'
+[1.124s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/velodyne_simulator) by extensions ['ignore', 'ignore_ament_install']
+[1.124s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/velodyne_simulator) by extension 'ignore'
+[1.124s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/velodyne_simulator) by extension 'ignore_ament_install'
+[1.124s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/velodyne_simulator) by extensions ['colcon_pkg']
+[1.124s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/velodyne_simulator) by extension 'colcon_pkg'
+[1.124s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/velodyne_simulator) by extensions ['colcon_meta']
+[1.124s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/velodyne_simulator) by extension 'colcon_meta'
+[1.125s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/velodyne_simulator) by extensions ['ros']
+[1.125s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/velodyne_simulator) by extension 'ros'
+[1.126s] DEBUG:colcon.colcon_core.package_identification:Package '/home/nyann/svan/svan_sw2/src/velodyne_simulator' with type 'ros.ament_cmake' and name 'velodyne_simulator'
+[1.126s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/velodyne_styff) by extensions ['ignore', 'ignore_ament_install']
+[1.126s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/velodyne_styff) by extension 'ignore'
+[1.127s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/velodyne_styff) by extension 'ignore_ament_install'
+[1.127s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/velodyne_styff) by extensions ['colcon_pkg']
+[1.127s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/velodyne_styff) by extension 'colcon_pkg'
+[1.127s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/velodyne_styff) by extensions ['colcon_meta']
+[1.127s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/velodyne_styff) by extension 'colcon_meta'
+[1.127s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/velodyne_styff) by extensions ['ros']
+[1.127s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/velodyne_styff) by extension 'ros'
+[1.127s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/velodyne_styff) by extensions ['cmake', 'python']
+[1.127s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/velodyne_styff) by extension 'cmake'
+[1.127s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/velodyne_styff) by extension 'python'
+[1.127s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/velodyne_styff) by extensions ['python_setup_py']
+[1.127s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nyann/svan/svan_sw2/src/velodyne_styff) by extension 'python_setup_py'
+[1.128s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults

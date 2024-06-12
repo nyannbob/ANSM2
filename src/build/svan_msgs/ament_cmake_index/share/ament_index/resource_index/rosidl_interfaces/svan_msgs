@@ -1,0 +1,16 @@
+msg/EulerXYZ.idl
+msg/EulerXYZ.msg
+msg/ImuData.idl
+msg/ImuData.msg
+msg/JointState.idl
+msg/JointState.msg
+msg/MotorGainMultiplier.idl
+msg/MotorGainMultiplier.msg
+msg/PoseEuler.idl
+msg/PoseEuler.msg
+msg/Position.idl
+msg/Position.msg
+msg/Trajectory.idl
+msg/Trajectory.msg
+msg/Twist.idl
+msg/Twist.msg
