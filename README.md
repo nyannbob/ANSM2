@@ -1,5 +1,5 @@
 
-# SVAN_CHAMPion
+# ANSM2
 This repository combines the CHAMP planner, implemented on SVAN_M2 for SLAM, with the Nav2 implementation. 
 **Note** that some files from the original project have been removed for privacy reasons.
 
