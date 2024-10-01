@@ -1,0 +1,22 @@
+version: '3.8'
+
+x-common-config: &common-config
+  volumes:
+    - ../src:/ros2_ws/src
+    - /tmp/.X11-unix:/tmp/.X11-unix
+  environment:
+    - DISPLAY=${DISPLAY}
+    - QT_X11_NO_MITSHM=1
+    - NVIDIA_VISIBLE_DEVICES=all
+    - NVIDIA_DRIVER_CAPABILITIES=all
+  network_mode: host
+  privileged: true
+
+services:
+  quadruped_robot_base:
+    build:
+      context: ..
+      dockerfile: docker/base/Dockerfile
+    image: quadruped_robot_base
+    <<: *common-config
+    command: /bin/bash

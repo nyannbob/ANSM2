@@ -1,0 +1,32 @@
+# docker/nav2/Dockerfile
+ARG BASE_IMAGE=ros2_base:latest
+FROM ${BASE_IMAGE}
+
+# Set ROS_DISTRO environment variable
+ENV ROS_DISTRO=humble
+
+# Install Navigation2, SLAM Toolbox, Gazebo, and their dependencies
+RUN apt-get update && apt-get install -y \
+    ros-humble-navigation2 \
+    ros-humble-nav2-bringup \ 
+    ros-humble-slam-toolbox \
+    && rm -rf /var/lib/apt/lists/*
+
+
+RUN curl -sSL http://get.gazebosim.org | sh && \
+    apt-get update && apt-get install -y \
+    ros-humble-gazebo-ros-pkgs \
+    ros-humble-gazebo-ros2-control \
+    ros-humble-xacro \
+    ros-humble-joint-state-publisher \
+    ros-humble-gazebo-ros2-control \
+    ros-humble-ros2-control \
+    ros-humble-ros2-controllers \
+    && rm -rf /var/lib/apt/lists/*
+
+# Source the ROS2 environment
+SHELL ["/bin/bash", "-c"]
+RUN echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
+
+# Set the entry point to bash
+CMD ["bash"]

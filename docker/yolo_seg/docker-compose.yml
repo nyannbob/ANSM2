@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  realsense-yolo:
+    build: .
+    volumes:
+      - /dev/video0:/dev/video0
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    environment:
+      - DISPLAY=${DISPLAY}
+    devices:
+      - /dev/video0
+    privileged: true
+    network_mode: host
+    command: ["python3", "realsense_yolo_seg.py"]
