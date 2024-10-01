@@ -41,13 +41,13 @@ project-root/
 
 2. Build the Docker image for development:
    ```
-   sudo docker-compose -f docker/base/ros2-base-compose.yml build
-   sudo docker-compose -f docker/nav2/ros2-nav2-compose.yml build
-   sudo docker-compose -f docker/nav2/ros2-nav2-compose.yml up -d
+   docker-compose -f docker/base/ros2-base-compose.yml build
+   docker-compose -f docker/nav2/ros2-nav2-compose.yml build
    ```
 
 3. Run the development container without launching it:
    ```
+   docker-compose -f docker/nav2/ros2-nav2-compose.yml up -d
 
    ```
 
