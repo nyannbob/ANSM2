@@ -1,0 +1,19 @@
+# docker-compose.yml (root level)
+version: '3'
+
+services:
+  ros2_base:
+    extends:
+      file: ./docker/base/ros2-base-compose.yml
+      service: ros2_base
+
+  ros2_nav2:
+    extends:
+      file: ./docker/nav2/ros2-nav2-compose.yml
+      service: ros2_nav2
+    depends_on:
+      - ros2_base
+
+volumes:
+  ros2_ws:
+    driver: local

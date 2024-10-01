@@ -1,0 +1,20 @@
+Hip:
+    Mass: 2.1
+    Cylinder length: 0.04
+    Radius: 0.085
+    
+Thigh:
+    Mass: 3.934
+    Length: 0.35
+
+Shank (Calf):
+    Mass: 0.857
+    Length: 0.35
+
+Torso (Trunk):
+    Mass: 25
+    Length: 0.7
+    Width: 0.15
+    Height: 0.22
+    Battery: nahi mila
+

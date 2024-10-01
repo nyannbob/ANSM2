@@ -1,0 +1,18 @@
+# docker/base/docker-compose.yml
+version: '3'
+
+services:
+  ros2_base:
+    build:
+      context: .
+      dockerfile: ros2-base-dockerfile
+    image: ros2_base:latest
+    volumes:
+      - ../../src:/ros2_ws/src
+    command: >
+      bash -c "
+        source /opt/ros/humble/setup.bash &&
+        cd /ros2_ws &&
+        colcon build &&
+        source install/setup.bash &&
+        bash"

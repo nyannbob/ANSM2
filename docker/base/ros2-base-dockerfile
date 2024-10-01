@@ -1,0 +1,24 @@
+# docker/base/Dockerfile
+FROM osrf/ros:humble-desktop
+
+# Install common dependencies
+RUN apt-get update && apt-get install -y \
+    python3-pip \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install any additional Python packages you might need
+RUN pip3 install --no-cache-dir \
+    transforms3d
+
+# Source the ROS2 environment
+SHELL ["/bin/bash", "-c"]
+RUN echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
+
+# Set up the workspace
+RUN mkdir -p /ros2_ws/src
+
+# Set the working directory
+WORKDIR /ros2_ws
+
+# Set the entry point to bash
+CMD ["bash"]

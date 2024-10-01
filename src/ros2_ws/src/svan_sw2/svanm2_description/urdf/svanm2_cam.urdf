@@ -1,0 +1,1551 @@
+<robot
+  name="svanm2_cam">
+
+    <!-- <link name = "world"></link>
+    <joint name="world_to_fixed_frame" type="fixed">
+        <parent link="world"/>
+        <child link="torso"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint> -->
+
+  <link name="base_link">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="floating_base" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="torso"/>
+  </joint>
+  <link
+    name="torso">
+    <inertial>
+      <origin xyz="0.0047249 -0.0000177 0.0011585" rpy="0 0 0" />
+      <mass value="3.4234000" />
+      <inertia ixx="0.0163964" ixy="-0.0000159" ixz="0.0010427" iyy="0.0425922" iyz="-0.0000006" izz="0.0511340" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///ros2_ws/src/ros2_ws/src/svan_sw2/svanm2_description/meshes/BASE.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///ros2_ws/src/ros2_ws/src/svan_sw2/svanm2_description/meshes/BASE.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="imu_joint" type="fixed">
+    <parent link="torso"/>
+    <child link="imu_link"/>
+    <origin rpy="0 0 0" xyz="-0.01592 -0.06659 -0.00617"/>
+  </joint>
+  <link name="imu_link">
+    <inertial>
+      <mass value="0.001"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.001 0.001 0.001"/>
+      </geometry>
+      <!-- <material name="red"/> -->
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size=".001 .001 .001"/>
+      </geometry>
+    </collision>
+  </link>
+<link name="fr_abd_l">
+    <inertial>
+      <origin xyz="0.0492121 -0.0779589 0.0008006" rpy="0 0 0" />
+      <mass value="1.3509490" />
+      <inertia ixx="0.0033376" ixy="-0.0001656" ixz="0.0000090" iyy="0.0011263" iyz="-0.0000051" izz="0.0033905" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///ros2_ws/src/ros2_ws/src/svan_sw2/svanm2_description/meshes/RF_HIP.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+        
+          filename="file:///ros2_ws/src/ros2_ws/src/svan_sw2/svanm2_description/meshes/RF_HIP.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fr_abd_j"
+    type="revolute">
+    <origin
+      xyz="0.155 -0.06 0"
+      rpy="0 0 0" />
+    <parent
+      link="torso" />
+    <child
+      link="fr_abd_l" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-4.8"
+      upper="4.8"
+      effort="10"
+      velocity="20" />
+  </joint>
+  <link
+    name="fr_hip_l">
+    <inertial>
+      <origin xyz="-0.0000042 0.0008381 -0.0603416" rpy="0 0 0" />
+      <mass value="0.2502465" />
+      <inertia ixx="0.0011437" ixy="0.0000000" ixz="-0.0000001" iyy="0.0011591" iyz="0.0000243" izz="0.0000720" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///ros2_ws/src/ros2_ws/src/svan_sw2/svanm2_description/meshes/RF_THIGH.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///ros2_ws/src/ros2_ws/src/svan_sw2/svanm2_description/meshes/RF_THIGH.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fr_hip_j"
+    type="revolute">
+    <origin
+      xyz="0.043751 -0.0796 0"
+      rpy="0 0 0" />
+    <parent
+      link="fr_abd_l" />
+    <child
+      link="fr_hip_l" />
+    <axis
+      xyz="0 1 0" />
+    <limit effort="10" lower="-4.0471975512" upper="4.18879020479" velocity="20"/>
+
+  </joint>
+  <link
+    name="fr_knee_l">
+    <inertial>
+      <origin xyz="-0.0035383 -0.0000273 -0.0688420" rpy="0 0 0" />
+      <mass value="0.2017400" />
+      <inertia ixx="0.0010436" ixy="-0.0000001" ixz="-0.0000693" iyy="0.0010692" iyz="-0.0000010" izz="0.0000424" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///ros2_ws/src/ros2_ws/src/svan_sw2/svanm2_description/meshes/RF_SHANK.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///ros2_ws/src/ros2_ws/src/svan_sw2/svanm2_description/meshes/RF_SHANK.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fr_knee_j"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.1915"
+      rpy="0 0 0" />
+    <parent
+      link="fr_hip_l" />
+    <child
+      link="fr_knee_l" />
+    <axis
+      xyz="0 1 0" />
+    <limit effort="20" lower="-4.69653369433" upper="4.916297857297" velocity="20"/>
+  </joint>
+  <joint name="fr_dummy_j" type="fixed">
+    <origin
+      xyz="-0.0 0 -0.16693"
+      rpy="0 0 0" />
+    <parent
+      link="fr_knee_l" />
+    <child
+      link="foot_FR" />
+    <limit lower="0" upper="0" effort="0" velocity="0" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="fl_abd_l">
+    <inertial>
+      <origin xyz="0.0492121 0.0779589 0.0008006" rpy="0 0 0" />
+      <mass value="1.3509490" />
+      <inertia ixx="0.0033376" ixy="0.0001656" ixz="0.0000090" iyy="0.0011263" iyz="0.0000051" izz="0.0033905" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///ros2_ws/src/ros2_ws/src/svan_sw2/svanm2_description/meshes/LF_HIP.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///ros2_ws/src/ros2_ws/src/svan_sw2/svanm2_description/meshes/LF_HIP.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fl_abd_j"
+    type="revolute">
+    <origin
+      xyz="0.155 0.06 0"
+      rpy="0 0 0" />
+    <parent
+      link="torso" />
+    <child
+      link="fl_abd_l" />
+    <axis
+      xyz="1 0 0" />
+    <limit effort="10" lower="-3.802851455917" upper="3.802851455917" velocity="20"/>
+
+  </joint>
+  <link
+    name="fl_hip_l">
+    <inertial>
+      <origin xyz="-0.0000042 -0.0008381 -0.0603416" rpy="0 0 0" />
+      <mass value="0.2502465" />
+      <inertia ixx="0.0011437" ixy="0.0000000" ixz="0.0000001" iyy="0.0011591" iyz="0.0000243" izz="0.0000720" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///ros2_ws/src/ros2_ws/src/svan_sw2/svanm2_description/meshes/LF_THIGH.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///ros2_ws/src/ros2_ws/src/svan_sw2/svanm2_description/meshes/LF_THIGH.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fl_hip_j"
+    type="revolute">
+    <origin
+      xyz="0.043751 0.0796 0"
+      rpy="0 0 0" />
+    <parent
+      link="fl_abd_l" />
+    <child
+      link="fl_hip_l" />
+    <axis
+      xyz="0 1 0" />
+    <limit effort="10" lower="-4.0471975512" upper="4.18879020479" velocity="20"/>
+
+  </joint>
+  <link
+    name="fl_knee_l">
+    <inertial>
+      <origin xyz="-0.0035383 0.0000273 -0.0688420" rpy="0 0 0" />
+      <mass value="0.2017400" />
+      <inertia ixx="0.0010436" ixy="0.0000001" ixz="-0.0000693" iyy="0.0010692" iyz="0.0000010" izz="0.0000424" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///ros2_ws/src/ros2_ws/src/svan_sw2/svanm2_description/meshes/LF_SHANK.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///ros2_ws/src/ros2_ws/src/svan_sw2/svanm2_description/meshes/LF_SHANK.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fl_knee_j"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.1915"
+      rpy="0 0 0" />
+    <parent
+      link="fl_hip_l" />
+    <child
+      link="fl_knee_l" />
+    <axis
+      xyz="0 1 0" />
+    <limit effort="20" lower="-4.69653369433" upper="4.916297857297" velocity="20"/>
+
+  </joint>
+  <joint name="fl_dummy_j" type="fixed">
+    <origin
+      xyz="-0.0 0 -0.16693"
+      rpy="0 0 0" />
+    <parent
+      link="fl_knee_l" />
+    <child
+      link="foot_FL" />
+    <axis
+      xyz="0 0 1" />
+    <limit lower="0" upper="0" effort="1000" velocity="0" />
+  </joint>
+
+  <link
+    name="rr_abd_l">
+    <inertial>
+      <origin xyz="-0.0492121 -0.0779589 0.0008006" rpy="0 0 0" />
+      <mass value="1.3509490" />
+      <inertia ixx="0.0033376" ixy="0.0001656" ixz="-0.0000090" iyy="0.0011263" iyz="-0.0000051" izz="0.0033905" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///ros2_ws/src/ros2_ws/src/svan_sw2/svanm2_description/meshes/RF_HIP.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///ros2_ws/src/ros2_ws/src/svan_sw2/svanm2_description/meshes/RH_HIP.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rr_abd_j"
+    type="revolute">
+    <origin
+      xyz="-0.155 -0.06 0"
+      rpy="0 0 0" />
+    <parent
+      link="torso" />
+    <child
+      link="rr_abd_l" />
+    <axis
+      xyz="1 0 0" />
+    <limit effort="10" lower="-4.802851455917" upper="4.802851455917" velocity="20"/>
+
+  </joint>
+  <link
+    name="rr_hip_l">
+    <inertial>
+      <origin xyz="0.0000042 0.0008381 -0.0603416" rpy="0 0 0" />
+      <mass value="0.2502465" />
+      <inertia ixx="0.0011437" ixy="0.0000000" ixz="-0.0000001" iyy="0.0011591" iyz="-0.0000243" izz="0.0000720" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///ros2_ws/src/ros2_ws/src/svan_sw2/svanm2_description/meshes/RH_THIGH.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///ros2_ws/src/ros2_ws/src/svan_sw2/svanm2_description/meshes/RH_THIGH.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rr_hip_j"
+    type="revolute">
+    <origin
+      xyz="-0.043751 -0.0796 0"
+      rpy="0 0 0" />
+    <parent
+      link="rr_abd_l" />
+    <child
+      link="rr_hip_l" />
+    <axis
+      xyz="0 1 0" />
+    <limit effort="10" lower="-4.0471975512" upper="4.18879020479" velocity="20"/>
+
+  </joint>
+  <link
+    name="rr_knee_l">
+    <inertial>
+      <origin xyz="0.0035383 0.0000273 -0.0688420" rpy="0 0 0" />
+      <mass value="0.2017400" />
+      <inertia ixx="0.0010436" ixy="0.0000001" ixz="-0.0000693" iyy="0.0010692" iyz="-0.0000010" izz="0.0000424" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///ros2_ws/src/ros2_ws/src/svan_sw2/svanm2_description/meshes/RH_SHANK.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///ros2_ws/src/ros2_ws/src/svan_sw2/svanm2_description/meshes/RH_SHANK.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rr_knee_j"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.1915"
+      rpy="0 0 0" />
+    <parent
+      link="rr_hip_l" />
+    <child
+      link="rr_knee_l" />
+    <axis
+      xyz="0 1 0" />
+    <limit effort="20" lower="-4.69653369433" upper="4.916297857297" velocity="20"/>
+
+  </joint>
+    <joint name="rr_dummy_j" type="fixed">
+    <origin
+      xyz="-0.0 0 -0.16802"
+      rpy="0 0 0" />
+    <parent
+      link="rr_knee_l" />
+    <child
+      link="foot_RR" />
+    <limit lower="0" upper="0" effort="1000" velocity="0" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="rl_abd_l">
+    <inertial>
+      <origin xyz="-0.0492121 0.0779589 0.0008006" rpy="0 0 0" />
+      <mass value="1.3509490" />
+      <inertia ixx="0.0033376" ixy="-0.0001656" ixz="-0.0000090" iyy="0.0011263" iyz="0.0000051" izz="0.0033905" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///ros2_ws/src/ros2_ws/src/svan_sw2/svanm2_description/meshes/LH_HIP.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///ros2_ws/src/ros2_ws/src/svan_sw2/svanm2_description/meshes/LH_HIP.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rl_abd_j"
+    type="revolute">
+    <origin
+      xyz="-0.155 0.06 0"
+      rpy="0 0 0" />
+    <parent
+      link="torso" />
+    <child
+      link="rl_abd_l" />
+    <axis
+      xyz="1 0 0" />
+    <limit effort="10" lower="-4.802851455917" upper="4.802851455917" velocity="20"/>
+
+  </joint>
+  <link
+    name="rl_hip_l">
+    <inertial>
+      <origin xyz="-0.0000042 -0.0008381 -0.0603416" rpy="0 0 0" />
+      <mass value="0.2502465" />
+      <inertia ixx="0.0011437" ixy="0.0000000" ixz="-0.0000001" iyy="0.0011591" iyz="0.0000243" izz="0.0000720" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///ros2_ws/src/ros2_ws/src/svan_sw2/svanm2_description/meshes/LH_THIGH.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///ros2_ws/src/ros2_ws/src/svan_sw2/svanm2_description/meshes/LH_THIGH.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rl_hip_j"
+    type="revolute">
+    <origin
+      xyz="-0.043751 0.0796 0"
+      rpy="0 0 0" />
+    <parent
+      link="rl_abd_l" />
+    <child
+      link="rl_hip_l" />
+    <axis
+      xyz="0 1 0" />
+    <limit effort="10" lower="-4.0471975512" upper="4.18879020479" velocity="20"/>
+
+  </joint>
+  <link
+    name="rl_knee_l">
+    <inertial>
+      <origin xyz="0.0035383 -0.0000273 -0.0688420" rpy="0 0 0" />
+      <mass value="0.2017400" />
+      <inertia ixx="0.0010436" ixy="-0.0000001" ixz="-0.0000693" iyy="0.0010692" iyz="0.0000010" izz="0.0000424" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///ros2_ws/src/ros2_ws/src/svan_sw2/svanm2_description/meshes/LH_SHANK.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///ros2_ws/src/ros2_ws/src/svan_sw2/svanm2_description/meshes/LH_SHANK.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rl_knee_j"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.1915"
+      rpy="0 0 0" />
+    <parent
+      link="rl_hip_l" />
+    <child
+      link="rl_knee_l" />
+    <axis
+      xyz="0 1 0" />
+    <limit effort="20" lower="-4.69653369433" upper="4.916297857297" velocity="20"/>
+
+  </joint>
+
+  <link name="foot_FR">
+    <contact>
+      <friction_anchor/>
+      <stiffness value="30000.0"/>
+      <damping value="750.0"/>
+      <spinning_friction value="0.3"/>
+      <lateral_friction value="50"/>
+    </contact>
+    <inertial>
+        <origin xyz="0.0014979844072685 1.99840144432528E-15 7.77349055681165E-05"
+        rpy="0 0 0" />
+        <mass value="0.025" />
+        <inertia ixx="2e-6" ixy="0" ixz="0" iyy="2e-6" iyz="0" izz="2e-6" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <sphere radius="0.02" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <sphere radius="0.02" />
+        </geometry>
+      </collision>
+  </link>
+  <link name="foot_FL">
+    <contact>
+      <friction_anchor/>
+      <stiffness value="30000.0"/>
+      <damping value="750.0"/>
+      <spinning_friction value="0.3"/>
+      <lateral_friction value="50"/>
+    </contact>
+    <inertial>
+        <origin xyz="0.0014979844072685 1.99840144432528E-15 7.77349055681165E-05"
+        rpy="0 0 0" />
+        <mass value="0.025" />
+        <inertia ixx="2e-6" ixy="0" ixz="0" iyy="2e-6" iyz="0" izz="2e-6" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <sphere radius="0.02" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <sphere radius="0.02" />
+        </geometry>
+      </collision>
+  </link>
+  <link name="foot_RL">
+    <contact>
+      <friction_anchor/>
+      <stiffness value="30000.0"/>
+      <damping value="750.0"/>
+      <spinning_friction value="0.3"/>
+      <lateral_friction value="50"/>
+    </contact>
+    <inertial>
+        <origin xyz="0.0014979844072685 1.99840144432528E-15 7.77349055681165E-05"
+        rpy="0 0 0" />
+        <mass value="0.025" />
+        <inertia ixx="2e-6" ixy="0" ixz="0" iyy="2e-6" iyz="0" izz="2e-6" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <sphere radius="0.02" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <sphere radius="0.02" />
+        </geometry>
+      </collision>
+  </link>
+  <link name="foot_RR">
+    <contact>
+      <friction_anchor/>
+      <stiffness value="30000.0"/>
+      <damping value="750.0"/>
+      <spinning_friction value="0.3"/>
+      <lateral_friction value="50"/>
+    </contact>
+    <inertial>
+        <origin xyz="0.0014979844072685 1.99840144432528E-15 7.77349055681165E-05"
+        rpy="0 0 0" />
+        <mass value="0.025" />
+        <inertia ixx="2e-6" ixy="0" ixz="0" iyy="2e-6" iyz="0" izz="2e-6" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <sphere radius="0.02" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <sphere radius="0.02" />
+        </geometry>
+      </collision>
+  </link>
+  <joint name="rl_dummy_j" type="fixed" >
+    <origin
+      xyz="-0.0 0 -0.16802"
+      rpy="0 0 0" />
+    <parent
+      link="rl_knee_l" />
+    <child
+      link="foot_RL" />
+    <axis
+      xyz="0 0 1" />
+    <limit lower="0" upper="0" effort="1000" velocity="0" />
+  </joint>
+
+   <gazebo reference="foot_FR">
+      <material>Gazebo/Black</material>
+    <collision>
+      <surface>
+        <bounce>
+          <restitution_coefficient>0</restitution_coefficient>
+          <threshold>1e+06</threshold>
+        </bounce>
+        <friction>
+          <torsional>
+            <coefficient>0.3</coefficient>
+          </torsional>
+          <ode>
+                        <mu>100.0</mu>
+            <mu2>50</mu2>
+           <!-- <mu>1.0</mu>
+            <mu2>1.0</mu2> -->
+          </ode>
+          <bullet>
+            <rolling_friction>0.3</rolling_friction>
+            <friction2>50</friction2>
+          </bullet>
+        </friction>
+        <contact>
+          <bullet>
+            <kp>30000.0</kp>
+            <kd>1000.0</kd> 
+
+          </bullet>
+          <ode>
+            <kp>30000.0</kp>
+            <kd>1000.0</kd> 
+
+          </ode>
+        </contact>
+      </surface>
+    </collision>
+  </gazebo>
+
+  <gazebo reference="foot_FL">
+      <material>Gazebo/Black</material>
+    <collision>
+      <surface>
+        <bounce>
+          <restitution_coefficient>0</restitution_coefficient>
+          <threshold>1e+06</threshold>
+        </bounce>
+        <friction>
+          <torsional>
+            <coefficient>0.3</coefficient>
+          </torsional>
+          <ode>
+                        <mu>100.0</mu>
+            <mu2>50</mu2>
+           <!-- <mu>1.0</mu>
+            <mu2>1.0</mu2> -->
+          </ode>
+          <bullet>
+            <rolling_friction>0.3</rolling_friction>
+            <friction2>50</friction2>
+          </bullet>
+        </friction>
+        <contact>
+          <bullet>
+            <kp>30000.0</kp>
+            <kd>1000.0</kd> 
+
+          </bullet>
+          <ode>
+            <kp>30000.0</kp>
+            <kd>1000.0</kd> 
+
+          </ode>
+        </contact>
+      </surface>
+    </collision>
+  </gazebo>
+
+  <gazebo reference="foot_RL">
+      <material>Gazebo/Black</material>
+    <collision>
+      <surface>
+        <bounce>
+          <restitution_coefficient>0</restitution_coefficient>
+          <threshold>1e+06</threshold>
+        </bounce>
+        <friction>
+          <torsional>
+            <coefficient>0.3</coefficient>
+          </torsional>
+          <ode>
+                        <mu>100.0</mu>
+            <mu2>50</mu2>
+           <!-- <mu>1.0</mu>
+            <mu2>1.0</mu2> -->
+          </ode>
+          <bullet>
+            <rolling_friction>0.3</rolling_friction>
+            <friction2>50</friction2>
+          </bullet>
+        </friction>
+        <contact>
+          <bullet>
+            <kp>30000.0</kp>
+            <kd>1000.0</kd> 
+
+          </bullet>
+          <ode>
+            <kp>30000.0</kp>
+            <kd>1000.0</kd> 
+
+          </ode>
+        </contact>
+      </surface>
+    </collision>
+  </gazebo>
+
+  <gazebo reference="foot_RR">
+      <material>Gazebo/Black</material>
+    <collision>
+      <surface>
+        <bounce>
+          <restitution_coefficient>0</restitution_coefficient>
+          <threshold>1e+06</threshold>
+        </bounce>
+        <friction>
+          <torsional>
+            <coefficient>0.3</coefficient>
+          </torsional>
+          <ode>
+                        <mu>100.0</mu>
+            <mu2>50</mu2>
+           <!-- <mu>1.0</mu>
+            <mu2>1.0</mu2> -->
+          </ode>
+          <bullet>
+            <rolling_friction>0.3</rolling_friction>
+            <friction2>50</friction2>
+          </bullet>
+        </friction>
+        <contact>
+          <bullet>
+            <kp>30000.0</kp>
+            <kd>1000.0</kd> 
+
+          </bullet>
+          <ode>
+            <kp>30000.0</kp>
+            <kd>1000.0</kd> 
+
+          </ode>
+        </contact>
+      </surface>
+    </collision>
+  </gazebo>
+
+   <gazebo>
+        <plugin name="joint_state_sensor" filename="libjoint_state_sensor.so"/>
+    </gazebo>
+    <gazebo>
+        <plugin name="base_state_sensor" filename="libbase_state_sensor.so"/>
+    </gazebo>
+    <!-- <gazebo>
+        <plugin name="contact_plugin" filename="libcontact_plugin_new.so">
+          <link1>foot_FR</link1>
+          <link2>foot_FL</link2>
+          <link3>foot_RL</link3>
+          <link4>foot_RR</link4>
+          <contact_model>0</contact_model>
+        </plugin>
+    </gazebo> -->
+    <gazebo reference="foot_FR">
+      <sensor name="FR_contact_sensor" type="contact">
+        <always_on>1</always_on>
+        <plugin name="contact_plugin_default" filename="libcontact_plugin_default.so">
+          <foot_link>FR</foot_link>
+        </plugin>
+        <contact>
+          <collision>foot_FR_collision</collision>
+        </contact>
+      </sensor>
+    </gazebo>
+    <gazebo reference="foot_FL">
+      <sensor name="FL_contact_sensor" type="contact">
+        <always_on>1</always_on>
+        <plugin name="contact_plugin_default" filename="libcontact_plugin_default.so">
+          <foot_link>FL</foot_link>
+        </plugin>
+        <contact>
+          <collision>foot_FL_collision</collision>
+        </contact>
+      </sensor>
+    </gazebo>
+    <gazebo reference="foot_RL">
+      <sensor name="RL_contact_sensor" type="contact">
+        <always_on>1</always_on>
+        <plugin name="contact_plugin_default" filename="libcontact_plugin_default.so">
+          <foot_link>RL</foot_link>
+        </plugin>
+        <contact>
+          <collision>foot_RL_collision</collision>
+        </contact>
+      </sensor>
+    </gazebo>
+    <gazebo reference="foot_RR">
+      <sensor name="RR_contact_sensor" type="contact">
+        <always_on>1</always_on>
+        <plugin name="contact_plugin_default" filename="libcontact_plugin_default.so">
+          <foot_link>RR</foot_link>
+        </plugin>
+        <contact>
+          <collision>foot_RR_collision</collision>
+        </contact>
+      </sensor>
+    </gazebo>
+    <gazebo>
+        <plugin name="motor_controller" filename="libmotor_controller.so">
+          <!-- <kp0>75</kp0>
+          <kp1>30.2</kp1>
+          <kp2>18.415</kp2> -->
+          <kp0>200.2</kp0>
+          <kp1>60.2</kp1>
+          <kp2>42.415</kp2>
+          <kd0>1</kd0>
+          <kd1>1.5</kd1>
+          <kd2>0.5</kd2>
+          <!-- <kp0>80</kp0>
+          <kp1>40</kp1>
+          <kp2>20</kp2>
+          <kd0>1</kd0>
+          <kd1>1</kd1>
+          <kd2>0.5</kd2> -->
+          <!-- <kp0>200</kp0>
+          <kp1>120</kp1>
+          <kp2>60</kp2>
+          <kd0>1</kd0>
+          <kd1>1</kd1>
+          <kd2>0.5</kd2> -->
+          <!-- adding higher gains for the swing leg -->
+          <kpsw0>300</kpsw0>
+          <kpsw1>300</kpsw1>
+          <kpsw2>300</kpsw2>
+          <kdsw0>6</kdsw0>
+          <kdsw1>6</kdsw1>
+          <kdsw2>6</kdsw2>
+        </plugin>
+    </gazebo>
+    <!-- <gazebo reference="imu_link">
+        <gravity>true</gravity>
+        <sensor name="imu_sensor" type="imu">
+        <always_on>true</always_on>
+        <update_rate>1000</update_rate>
+        <visualize>true</visualize>
+        <topic>__default_topic__</topic>
+        <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+            <topicName>/svan/imu</topicName>
+            <bodyName>imu_link</bodyName>
+            <updateRateHZ>1000.0</updateRateHZ>
+            <gaussianNoise>0.001</gaussianNoise>
+            <xyzOffset>0 0 0</xyzOffset>
+            <rpyOffset>0 0 0</rpyOffset>
+            <frameName>imu_link</frameName>
+        </plugin>
+        <pose>0 0 0 0 0 0</pose>
+        </sensor>
+    </gazebo> -->
+
+        <gazebo reference="imu_link">
+                <sensor name="imu_controller" type="imu">
+                    <always_on>true</always_on>
+                    <update_rate>50</update_rate>
+                    <plugin name="gazebo_ros_imu_sensor" filename="libgazebo_ros_imu_sensor.so">
+                        <ros>
+                            <namespace>/imu</namespace>
+                            <argument>~/out:=data</argument>
+                        </ros>
+                        <!-- <updateRate>50.0</updateRate>
+                        <bodyName>imu_link</bodyName>
+                        <topicName>imu/data</topicName>
+                        <accelDrift>0.005 0.005 0.005</accelDrift>
+                        <accelGaussianNoise>0.005 0.005 0.005</accelGaussianNoise>
+                        <rateDrift>0.005 0.005 0.005 </rateDrift>
+                        <rateGaussianNoise>0.005 0.005 0.005 </rateGaussianNoise>
+                        <headingDrift>0.005</headingDrift>
+                        <headingGaussianNoise>0.005</headingGaussianNoise> -->
+                    </plugin>
+                </sensor>
+            </gazebo>
+  
+    <joint name="scan_joint" type="fixed">
+      <parent link="torso"/>
+      <child link="base_scan"/>
+      <origin xyz="-0.064 0 0.090" rpy="0 0 0"/>
+    </joint>
+
+
+    <link name="base_scan">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="file:///ros2_ws/src/ros2_ws/src/svan_sw2/svanm2_description/meshes/sensors_meshes/lds.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+        <!-- <material name="dark"/> -->
+      </visual>
+
+      <collision>
+        <origin xyz="0.015 0 -0.0065" rpy="0 0 0"/>
+        <geometry>
+          <cylinder length="0.0315" radius="0.055"/>
+        </geometry>
+      </collision>
+
+      <inertial>
+        <mass value="0.114" />
+        <origin xyz="0 0 0" />
+        <inertia ixx="0.001" ixy="0.0" ixz="0.0"
+                iyy="0.001" iyz="0.0"
+                izz="0.001" />
+      </inertial>
+    </link>
+
+    <gazebo reference="base_scan">
+      <sensor type="ray" name="lds_lfcd_sensor">
+        <pose>0 0 0 0 0 0</pose>
+        <visualize>true</visualize>
+        <update_rate>5</update_rate>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>360</samples>
+              <resolution>1</resolution>
+              <min_angle>0.0</min_angle>
+              <max_angle>6.28319</max_angle>
+            </horizontal>
+              <!-- <vertical>
+                <samples>16</samples>
+                <resolution>1</resolution>
+                <min_angle>-0.26178</min_angle>
+                <max_angle> 0.26178</max_angle>
+              </vertical> -->
+          </scan>
+          <range>
+            <min>0.30</min>
+            <max>3.0</max>
+            <resolution>0.015</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0.0</mean>
+            <stddev>0.01</stddev>
+          </noise>
+        </ray>
+        <plugin name="gazebo_ros_lds_lfcd_controller" filename="libgazebo_ros_ray_sensor.so">
+          <topic_name>scan</topic_name>
+          <ros>
+              <namespace>/svan</namespace>
+              <argument>~/out:=scan</argument>
+          </ros>
+          <output_type>sensor_msgs/LaserScan</output_type>
+          <frame_name>base_scan</frame_name>
+        </plugin>
+      </sensor>
+    </gazebo>
+
+
+    <!-- %%%%%%Toshith, remove below for trying the realsense gazebo plugin%%%% -->
+    <joint name="camera_joint" type="fixed">
+      <origin xyz="0.12 0.0 0.075" rpy="0 0 0"/>
+      <parent link="torso"/>
+      <child link="camera_link"/>
+    </joint>
+
+    <link name="camera_link">
+      <visual>
+      <origin xyz="0 0 0" rpy="1.57 0 1.57"/>
+        <geometry>
+        <mesh filename="file:///ros2_ws/src/ros2_ws/src/svan_sw2/svanm2_description/meshes/sensors_meshes/d435.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0.003 0.065 0.007" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.012 0.132 0.020"/>
+        </geometry>
+      </collision>
+
+        <!-- This inertial field needs doesn't contain reliable data!!-->
+      <inertial>
+        <mass value="0.564" />
+        <origin xyz="0 0 0" />
+        <inertia ixx="0.003881243" ixy="0.0" ixz="0.0"
+                iyy="0.000498940" iyz="0.0"
+                izz="0.003879257" />
+      </inertial>
+    </link>
+
+
+    <joint name="camera_rgb_joint" type="fixed">
+      <!-- <origin xyz="${r200_cam_rgb_px} ${r200_cam_rgb_py} ${r200_cam_rgb_pz}" rpy="0 0 0"/>  -->
+      <origin xyz="0.005 0.018 0.013" rpy="0 0 0"/> <!-- change the values here-->
+      <parent link="camera_link"/>
+      <child link="camera_rgb_frame"/>
+    </joint>
+    <link name="camera_rgb_frame"/>
+
+    <joint name="camera_rgb_optical_joint" type="fixed">
+      <origin xyz="0 0 0" rpy="-1.57 0 -1.57"/>
+      <parent link="camera_rgb_frame"/>
+      <child link="camera_rgb_optical_frame"/>
+    </joint>
+    <link name="camera_rgb_optical_frame"/>
+
+    <joint name="camera_depth_joint" type="fixed">
+      <!-- <origin xyz="${r200_cam_rgb_px} ${r200_cam_rgb_py + r200_cam_depth_offset} ${r200_cam_rgb_pz}" rpy="0 0 0"/> change the values here -->
+      <origin xyz="0.005 0.028 0.013" rpy="0 0 0"/> <!-- change the values here-->
+      <parent link="camera_link"/>
+      <child link="camera_depth_frame"/>
+    </joint>
+    <link name="camera_depth_frame"/>
+
+    <joint name="camera_depth_optical_joint" type="fixed">
+      <origin xyz="0 0 0" rpy="-1.57 0 -1.57"/>
+      <parent link="camera_depth_frame"/>
+      <child link="camera_depth_optical_frame"/>
+    </joint>
+    <link name="camera_depth_optical_frame"/>
+
+    <gazebo reference="camera_rgb_frame">
+      <sensor type="depth" name="realsense_D435">
+        <always_on>true</always_on>
+        <update_rate>30.0</update_rate>
+
+        <visualize>true</visualize>
+        <camera>
+            <horizontal_fov>1.3439</horizontal_fov>
+            <image>
+                <width>1920</width>
+                <height>1080</height>
+                <format>R8G8B8</format>
+            </image>
+            <depth_camera></depth_camera>
+            <clip>
+                <near>0.03</near>
+                <far>100</far>
+            </clip>
+            <!-- <distortion>
+              <k1>0.1</k1>
+              <k2>0.2</k2>
+              <k3>0.3</k3>
+              <p1>0.4</p1>
+              <p2>0.5</p2>
+              <center>0.5 0.5</center>
+            </distortion> -->
+        </camera>
+        <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+
+
+
+           <ros>
+              <remapping>camera/image_raw:=camera/rgb/image_raw</remapping>
+              <remapping>camera/image_depth:=camera/depth/image_raw</remapping>
+              <remapping>camera/camera_info:=camera/rgb/camera_info</remapping>
+              <remapping>camera/camera_info_depth:=camera/depth/camera_info</remapping>
+              <remapping>camera/points:=camera/depth/points</remapping>
+            </ros>
+
+            <!-- Set camera name. If empty, defaults to sensor name (i.e. "sensor_name") -->
+            <camera_name>camera</camera_name>
+
+            <!-- Set TF frame name. If empty, defaults to link name (i.e. "link_name") -->
+            <frame_name>camera_rgb_optical_frame</frame_name>
+          <!-- <baseline>0.2</baseline> -->
+
+          <hack_baseline>0</hack_baseline>
+        </plugin>
+
+      </sensor>
+    </gazebo>
+
+    <!-- D435 Gazebo plugin with its urdf file, Toshith added, try this for new gazebo plugin-->
+    <!--
+        <joint name="camera_joint" type="fixed">
+          <origin xyz="0.12 0.0 0.075" rpy="0 0 0"/>
+          <parent link="torso"/>
+          <child link="camera_link"/>
+        </joint>
+        <xacro:include filename="$(find svanm2_description)/urdf/_d435.urdf.xacro" />
+
+
+        <sensor_d435 parent="camera_link">
+          <origin xyz="0 0 0" rpy="0 0 0"/>
+        </sensor_d435>
+
+    -->
+
+    <gazebo reference='base_link'>
+      <material>Gazebo/Green</material>
+    </gazebo>
+
+    <gazebo reference='base_scan'>
+      <material>Gazebo/Black</material>
+    </gazebo>
+
+    <gazebo reference='fr_knee_l'>
+      <material>Gazebo/Black</material>
+    </gazebo>
+
+    <gazebo reference='fl_knee_l'>
+      <material>Gazebo/Black</material>
+    </gazebo>
+
+    <gazebo reference='rr_knee_l'>
+      <material>Gazebo/Black</material>
+    </gazebo>
+
+   <gazebo reference='rl_knee_l'>
+      <material>Gazebo/Black</material>
+    </gazebo>
+
+
+
+    <gazebo reference='fr_hip_l'>
+      <material>Gazebo/Black</material>
+    </gazebo>
+
+    <gazebo reference='fl_hip_l'>
+      <material>Gazebo/Black</material>
+    </gazebo>
+
+    <gazebo reference='rr_hip_l'>
+      <material>Gazebo/Black</material>
+    </gazebo>
+
+   <gazebo reference='rl_hip_l'>
+      <material>Gazebo/Black</material>
+    </gazebo>
+
+
+
+    <gazebo reference='fr_abd_l'>
+      <material>Gazebo/Grey</material>
+    </gazebo>
+
+    <gazebo reference='fl_abd_l'>
+      <material>Gazebo/Grey</material>
+    </gazebo>
+
+    <gazebo reference='rr_abd_l'>
+      <material>Gazebo/Grey</material>
+    </gazebo>
+
+   <gazebo reference='rl_abd_l'>
+      <material>Gazebo/Grey</material>
+    </gazebo>
+
+    <!-- Nishant - ROS2 Control -->
+    <ros2_control name="fr_knee_c" type="system">
+  <hardware>
+    <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+  </hardware>
+      <joint name="fr_knee_j">
+        <command_interface name="effort">
+     
+
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+    </ros2_control>
+
+    <ros2_control name="fr_abd_c" type="system">
+    <hardware>
+      <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+    </hardware>
+      <joint name="fr_abd_j">
+        <command_interface name="effort">
+     
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+    </ros2_control>
+
+    <ros2_control name="fr_hip_c" type="system">
+    <hardware>
+      <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+    </hardware>
+      <joint name="fr_hip_j">
+        <command_interface name="effort">
+     
+
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+    </ros2_control>
+
+    <ros2_control name="fl_knee_c" type="system">
+    <hardware>
+      <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+    </hardware>
+      <joint name="fl_knee_j">
+        <command_interface name="effort">
+     
+
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+    </ros2_control>
+
+    <ros2_control name="fl_abd_c" type="system">
+    <hardware>
+      <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+    </hardware>
+      <joint name="fl_abd_j">
+        <command_interface name="effort">
+            
+
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+    </ros2_control>
+
+    <ros2_control name="fl_hip_c" type="system">
+    <hardware>
+      <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+    </hardware>
+      <joint name="fl_hip_j">
+        <command_interface name="effort">
+     
+
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+   </ros2_control>
+
+
+  <ros2_control name="rr_knee_c" type="system">
+    <hardware>
+      <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+    </hardware>
+      <joint name="rr_knee_j">
+        <command_interface name="effort">
+     
+
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+    </ros2_control>
+
+    <ros2_control name="rr_abd_c" type="system">
+    <hardware>
+      <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+    </hardware>
+      <joint name="rr_abd_j">
+        <command_interface name="effort">
+     
+
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+    </ros2_control>
+
+    <ros2_control name="rr_hip_c" type="system">
+    <hardware>
+      <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+    </hardware>
+      <joint name="rr_hip_j">
+        <command_interface name="effort">
+     
+
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+     </ros2_control>
+
+    <ros2_control name="rl_knee_c" type="system">
+    <hardware>
+      <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+    </hardware>
+      <joint name="rl_knee_j">
+        <command_interface name="effort">
+     
+
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+    </ros2_control>
+
+    <ros2_control name="rl_abd_c" type="system">
+    <hardware>
+      <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+    </hardware>
+      <joint name="rl_abd_j">
+        <command_interface name="effort">
+     
+
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+    </ros2_control>
+
+
+    <ros2_control name="rl_hip_c" type="system">
+    <hardware>
+      <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+    </hardware>
+      <joint name="rl_hip_j">
+        <command_interface name="effort">
+     
+
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+    </ros2_control>
+
+    <gazebo>
+      <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
+        <parameters>/ros2_ws/src/ros2_ws/src/svan_sw2/svanm2_description/config/controller_configuration.yaml</parameters>
+
+      </plugin>
+    </gazebo>
+    
+    <gazebo>
+      <plugin name="p3d_base_controller" filename="libgazebo_ros_p3d.so">
+        <ros>
+            <argument>odom:=odom/ground_truth</argument>
+        </ros>
+
+        <body_name>base_link</body_name>
+        <frame_name>world</frame_name>
+        <update_rate>10.0</update_rate>
+        <xyz_offset>0 0 0</xyz_offset>
+        <rpy_offset>0 0 0</rpy_offset>
+        <gaussian_noise>0.1</gaussian_noise>
+      </plugin>
+    </gazebo>
+</robot>

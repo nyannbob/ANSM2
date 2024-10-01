@@ -1,86 +1,106 @@
+# Quadruped Robot Navigation using ROS2
 
-# ANSM2
-This repository combines the CHAMP planner, implemented on SVAN_M2 for SLAM, with the Nav2 implementation. 
-**Note** that some files from the original project have been removed for privacy reasons.
+This project implements navigation capabilities for Svan M2 using ROS2 Humble, Nav2, and SLAM.
 
 ## Prerequisites
 
-1. ROS2 
-2. ROS2-control
-3. Docker
-
-
+- Docker
+- Docker Compose
+- Git
 
 ## Project Structure
 
 ```
 project-root/
 │
+├── docker/
+│   ├── base/
+│   │   └── Dockerfile
+│   ├── development/
+│   │   ├── Dockerfile
+│   │   └── docker-compose.yml
+│   └── production/
+│       ├── Dockerfile
+│       └── docker-compose.yml
 │
-├── ros2_ws
-|    └── ... (realsense packages)
-│    └── src      
-│          └── ... (champ packages)
-|          └── ... (svan packages)
-│          └── ... (velodyne packages)
-|                       
+├── src/
+│   └── ... (ROS2 packages)
+│
 ├── .gitignore
-├── Dockerfile
+├── requirements.txt
 └── README.md
-
 ```
 
+## Getting Started
 
-# Setup
-```bash
-mkdir svan_champ_ws
-mkdir svan_champ_ws/src
-cd svan_champ_ws
-git clone https://github.com/nyannbob/svan_champ.git src
-```
+1. Clone the repository:
+   ```
+   git clone git@github.com:xterra-robotics/xMo_autonomy.git
+   cd xMo_autonomy
+   ```
 
-# Changes to make before running
-- Absolute paths, these files are currently using absolute paths and would need to be changed for this repo to work (look for /home/nyann)
-    - svam_sw2/svanm2_description/launch/display.launch.py (although this file has no use as of now)
-    - svam_sw2/svanm2_description/urdf/svanm2_cam.urdf (xacro implementation can fix this)
+2. Build the Docker image for development:
+   ```
+   sudo docker-compose -f docker/base/ros2-base-compose.yml build
+   sudo docker-compose -f docker/nav2/ros2-nav2-compose.yml build
+   sudo docker-compose -f docker/nav2/ros2-nav2-compose.yml up -d
+   ```
 
-# Steps for running (from src directory)
-1. Go back to your workspace
-```bash
-cd ..
-```
-2. Build this repository
-```bash
-colcon build
-```
-3. Source the setup file
-```bash
-source install/setup.bash
-```
-4. Launch the URDF in gazebo
-```bash
-ros2 launch svanm2_description gazebo.launch.py
-```
-5. Launch the controller nodes and planner from CHAMP
-```bash
-ros2 launch champ_config gazebo.launch.py
-```
-6. Launch the teleop to control the bot
-```bash
-ros2 launch champ_teleop teleop.launch.py
-```
+3. Run the development container without launching it:
+   ```
 
-### SLAM and NAV2
-7. Launch slam_toolbox 
-```bash
-ros2 launch slam_toolbox online_async_launch.py slam_params_file:=./src/svan_sw2/svanm2_description/config/mapper_params_online_async.yaml use_sim_time:=true
-```
-8. Launch nav2
-```bash
-ros2 launch svanm2_description navigation_launch.py use_sim_time:=true
-```
-# Essential parameters to change in CHAMP code to run other URDFs
-- joint_names_, joint_names (contacts_sensor.cpp, quadruped_controller.cpp, message_relay.cpp, state_estimator.cpp)
-- gait.yaml (to change gait parameters)
-- arm lengths (kinodynamics.hpp)
-- odometry/imu values if required (slam.yaml)
+   ```
+
+4. In a new terminal, enter the running container:
+   ```
+   docker exec -it nav2_ros2_nav2_1 bash
+   ```
+
+5. Inside the container, you can now run ROS2 commands, for example:
+   ```
+   colcon build
+   source install/setup.bash
+   ros2 launch svanm2_description test.launch.py
+   ```
+
+5. Closing the container:
+    First exit the container using
+    ```
+    exit
+    ``` 
+
+    Run the following to stop and remove container
+    ```
+    docker-compose -f docker/nav2/ros2-nav2-compose.yml down
+    ```
+
+## Development
+
+- The `src/` directory is mounted as a volume in the development container. Any changes you make to the source files on your host machine will be reflected in the container.
+- To add new ROS2 packages, place them in the `src/` directory.
+- After adding new packages or making changes, rebuild your workspace inside the container:
+  ```
+  colcon build
+  ```
+
+## Testing
+
+(Add information about how to run tests for your project)
+
+## Deployment
+
+(Add information about how to deploy your project in a production environment)
+
+## Contributing
+
+(Add guidelines for contributing to your project)
+
+## License
+
+(Add license information)
+
+## Contact
+
+Aditya Pratap Singh Rajawat - apsr@xterrarobotics.com
+
+Project Link: [https://github.com/xterrarobotics/xMo_autonomy](https://github.com/xterrarobotics/xMo_autonomy)
