@@ -1,4 +1,4 @@
-# Quadruped Robot Navigation using ROS2
+![image](https://github.com/user-attachments/assets/8dccfb99-9bab-42f1-b60f-9b27ac48960b)# Quadruped Robot Navigation using ROS2
 
 This project implements navigation capabilities for Svan M2 
 This project focuses on enabling autonomous navigation for the Svan M2, a quadruped robot developed at IIT Kanpur's Mobile Robotics Laboratory. By implementing SLAM (Simultaneous Localization and Mapping) and the Navigation2 stack using ROS2 Humble, Nav2, and SLAM. The Svan M2 can map its environment in real-time and navigate autonomously.
@@ -7,16 +7,25 @@ This project focuses on enabling autonomous navigation for the Svan M2, a quadru
 
 <table>
   <tr>
+    <!-- First Image -->
     <td>
       <img src="https://github.com/nyannbob/ANSM2/blob/main/sim_nav.gif" alt="Simulation GIF" width="400">
     </td>
+    <!-- Second Image -->
+    <td>
+      <img src="https://github.com/user-attachments/assets/66977b32-8c27-42c2-9033-dea80c8e01d4" alt="SLAM Mapping" width="400">
+    </td>
   </tr>
   <tr>
+    <!-- First Image Description -->
     <td align="center"><b>Simulation of navigation algorithm</b></td>
+    <!-- Second Image Description -->
+    <td align="center"><b>Simulation of SLAM mapping.</b></td>
   </tr>
 </table>
 
-</div
+</div>
+
 
 ## Key Features:
 - SLAM Toolbox Integration: Implemented SLAM Toolbox for real-time mapping and localization using LIDAR and IMU data.
