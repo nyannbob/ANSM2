@@ -12,7 +12,7 @@ This project focuses on enabling autonomous navigation for the Svan M2, a quadru
            <img src="https://github.com/nyannbob/ANSM2/blob/main/slam_sim.gif" alt="SLAM Mapping" width="500">
     </td>
     <!-- Second Image -->
-    <td> <img src="https://github.com/nyannbob/ANSM2/blob/main/sim_nav.gif" alt="Simulation GIF" width="400">
+    <td> <img src="https://github.com/nyannbob/ANSM2/blob/main/sim_nav.gif" alt="Simulation GIF" width="300">
     </td>
   </tr>
   <tr>
