@@ -3,6 +3,8 @@
 This project implements navigation capabilities for Svan M2 
 This project focuses on enabling autonomous navigation for the Svan M2, a quadruped robot developed at IIT Kanpur's Mobile Robotics Laboratory. By implementing SLAM (Simultaneous Localization and Mapping) and the Navigation2 stack using ROS2 Humble, Nav2, and SLAM. The Svan M2 can map its environment in real-time and navigate autonomously.
 
+![Untitled video - Made with Clipchamp](https://github.com/user-attachments/assets/5c8c03e8-d6e7-42bf-8a7b-1408eb19248f)
+
 ## Key Features:
 - SLAM Toolbox Integration: Implemented SLAM Toolbox for real-time mapping and localization using LIDAR and IMU data.
 - Navigation2 Stack: Deployed Nav2 for autonomous path planning, obstacle avoidance, and recovery behaviors.
